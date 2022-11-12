@@ -80,17 +80,21 @@ body {
 .navRightShop a:hover:after {
   width: 100%;
 }
-.navRight .hamburgerMenu {
-  width: 20px;
-  height: 21px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.navRight input {
   position: absolute;
   top: 40px;
   right: 45px;
+  z-index: 50;
+  width: 20px;
+  height: 18px;
+  opacity: 0;
   cursor: pointer;
-  z-index: 49;
+}
+.navRight input:checked ~ #sideMenu {
+  right: 0;
+  top: 0;
+  transition: all 1s cubic-bezier(0, 1.02, 0.51, 0.96);
+  opacity: 1;
 }
 .navRight input:checked + .hamburgerMenu .hamMenu1 {
   transition: all 0.2s cubic-bezier(0, 1.02, 0.51, 0.96);
@@ -104,6 +108,18 @@ body {
   transition: all 0.2s cubic-bezier(0, 1.02, 0.51, 0.96);
   transform: rotate(-45deg);
   opacity: 0;
+}
+.navRight .hamburgerMenu {
+  width: 20px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 40px;
+  right: 45px;
+  cursor: pointer;
+  z-index: 49;
 }
 .navRight .hamburgerMenu .hamMenu1 {
   background-color: #ffffff;
@@ -123,16 +139,6 @@ body {
   height: 2px;
   margin-bottom: 4px;
 }
-.navRight input {
-  position: absolute;
-  top: 40px;
-  right: 45px;
-  z-index: 50;
-  width: 20px;
-  height: 18px;
-  opacity: 0;
-  cursor: pointer;
-}
 #sideMenu {
   position: fixed;
   width: 350px;
@@ -140,12 +146,6 @@ body {
   background-color: #000000;
   right: -320px;
   opacity: 0;
-}
-#menu {
-  position: absolute;
-  top: 75px;
-  right: 50px;
-  width: 280px;
 }
 #sideMenu ul {
   position: relative;
@@ -159,7 +159,7 @@ body {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
-#sideMenu ul li {
+#sideMenu li {
   margin: 12px 0px;
   border-bottom: solid 1px rgba(255, 255, 255, 0.171);
   text-align: right;
@@ -169,11 +169,11 @@ body {
 #sideMenu a {
   text-decoration: none;
 }
-.navRight input:checked ~ #sideMenu {
-  right: 0;
-  top: 0;
-  transition: all 1s cubic-bezier(0, 1.02, 0.51, 0.96);
-  opacity: 1;
+#menu {
+  position: absolute;
+  top: 75px;
+  right: 50px;
+  width: 280px;
 }
 .material-symbols-outlined {
   position: absolute;
@@ -187,11 +187,11 @@ body {
   left: calc(50% - 190px);
   text-align: center;
 }
-#firstContainer .mainText h1 {
+#firstContainer h1 {
   font-size: 90px;
   font-weight: bold;
 }
-#firstContainer .mainText h2 {
+#firstContainer h2 {
   font-size: 20px;
   font-weight: lighter;
 }
@@ -210,7 +210,7 @@ body {
   padding: 40px;
   margin: 0 100px;
 }
-#counter .container .number {
+#counter .number {
   font-size: 120px;
 }
 #secondContainer {
@@ -261,6 +261,11 @@ body {
 #active {
   opacity: 100%;
 }
+.dotsRockets {
+  display: flex;
+  justify-content: center;
+  margin-top: -35px;
+}
 .dotsRockets img {
   width: 10px;
   height: 10px;
@@ -284,11 +289,6 @@ body {
   left: 2%;
   bottom: 8%;
 }
-.dotsRockets {
-  display: flex;
-  justify-content: center;
-  margin-top: -35px;
-}
 #table {
   width: 500px;
   position: absolute;
@@ -298,19 +298,19 @@ body {
 #table table {
   width: 100%;
 }
+#table span {
+  color: gray;
+}
 #table tbody {
   height: 400px;
   width: 100%;
   font-weight: 700;
 }
-#table tbody td {
+#table td {
   border-bottom: 1px solid rgba(128, 128, 128, 0.521);
   text-align: left;
 }
-#table tbody span {
-  color: gray;
-}
-#table tbody td:nth-child(2n) {
+#table td:nth-child(2n) {
   text-align: right;
 }
 .infoRockets {
@@ -319,24 +319,24 @@ body {
   top: 25%;
   left: 18%;
 }
+.infoRockets h1 {
+  margin-top: 20px;
+}
 .options {
   display: flex;
   margin: 40px 0;
-}
-.infoRockets h1 {
-  margin-top: 20px;
 }
 .options h3 {
   margin-right: 10px;
   cursor: pointer;
   color: gray;
 }
+.options a:hover {
+  color: #ffffff !important;
+  transition: 0.6s;
+}
 #active {
   color: #ffffff;
-}
-.options h3:hover {
-  color: #ffffff;
-  transition: 0.6s;
 }
 .info p {
   margin-top: 25px;
@@ -402,10 +402,16 @@ body {
 #gFooter .gNav {
   width: 100%;
 }
-.gNav img {
+#gFooter img {
   width: 25px ;
   height: 25px;
   filter: invert(1);
+}
+#gFooter div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
 }
 #left {
   position: absolute;
@@ -416,12 +422,6 @@ body {
   position: absolute;
   right: 4%;
   bottom: 30%;
-}
-#gFooter div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75px;
 }
 #engines iframe {
   width: 100%;
