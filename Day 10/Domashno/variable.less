@@ -1,0 +1,35 @@
+@backGroundColor: #000;
+@mainFontColor: rgb(255, 255, 255);
+@secondaryFontColor: gray;
+@fontFamily: 'Roboto Condensed', sans-serif;
+
+@bold : 700;
+@fullWidth: 100%;
+@heightOfSection: 100vh;
+
+@hamMenuTransition: all 0.2s cubic-bezier(0,1.02,.51,.96);
+@navMenuTransition: all 1s cubic-bezier(0,1.02,.51,.96);
+
+.fontAnimation(){
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.humLine(){
+    background-color: @mainFontColor;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+};
+.flexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
